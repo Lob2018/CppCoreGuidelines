@@ -13,8 +13,8 @@ jobs:
            sudo apt-get update
            sudo apt-get install hunspell
            
-      - name: Run cd scripts; make -k VERBOSE=1
-        run: cd scripts; make -k VERBOSE=1
+      - name: Run cd scripts; make -k -d
+        run: cd scripts; make -k -d
 
       - name: Run cd ..
         run: cd ..
