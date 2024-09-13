@@ -1,0 +1,23 @@
+name: Check Links and Anchors
+
+on: [push, pull_request]
+
+jobs:
+  check-links:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          # If you have dependencies, install them here
+          # pip install -r requirements.txt
+
+      - name: Run link and anchor checker
+        run: python scripts/python/github_actions_check_links.py
